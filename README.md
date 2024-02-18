@@ -13,7 +13,8 @@ $ git checkout <<branch_name>>
 $ vi docker-compose.yml
 # ここでバージョンを変更
 #   20240218001 -> yyyymmddxxx
-$ docker compose build <<base>>
+$ docker compose build --cpu-period=100000 --cpu-quota=20000 <<base>>
+$ docker login
 $ docker tag docker-cli-base:<<base>>-yyyymmddxxx goferex/docker-cli-base:<<base>>-yyyymmddxxx
 $ docker push goferex/docker-cli-base:<<base>>-yyyymmddxxx
 $ docker tag docker-cli-base:<<base>>-yyyymmddxxx goferex/docker-cli-base:<<base>>
