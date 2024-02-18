@@ -7,6 +7,7 @@
 
 ログイン後に以下のようにコマンドを実行しDockerHubにpushする
 ```sh
+$ tmux
 $ git clone https://github.com/gofer/docker-cli-base
 $ git checkout <<branch_name>>
 $ vi docker-compose.yml
