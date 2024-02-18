@@ -10,10 +10,14 @@
 $ tmux
 $ git clone https://github.com/gofer/docker-cli-base
 $ git checkout <<branch_name>>
-$ vi docker-compose.yml
-# ここでバージョンを変更
-#   20240218001 -> yyyymmddxxx
-$ docker compose build --cpu-period=100000 --cpu-quota=20000 <<base>>
+$ docker build \
+    -f <<base>>.dockerfile \
+    --tag docker-cli-base:<<base>>-yyyymmddxxx \
+    --build-arg cica_ver=5.0.3 \
+    --build-arg go_ver=1.22.0 \
+    --cpu-period=100000 \
+    --cpu-quota=20000 \
+    .
 $ docker login
 $ docker tag docker-cli-base:<<base>>-yyyymmddxxx goferex/docker-cli-base:<<base>>-yyyymmddxxx
 $ docker push goferex/docker-cli-base:<<base>>-yyyymmddxxx
