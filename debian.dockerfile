@@ -158,8 +158,7 @@ RUN $CARGO install zoxide \
 
 FROM debian:bookworm-slim
 
-RUN apt update && apt upgrade
-
 COPY --from=tools-builder /artifacts.tar.gz /
 
-RUN tar xf /artifacts.tar.gz
+RUN apt update && apt upgrade \
+ && tar xf /artifacts.tar.gz
