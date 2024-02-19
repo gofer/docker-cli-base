@@ -9,7 +9,7 @@
 ```sh
 $ tmux
 $ git clone https://github.com/gofer/docker-cli-base
-$ git checkout <<branch_name>>
+$ git checkout <<branch_name/tag_name>>
 $ docker build \
     -f <<base>>.dockerfile \
     --tag docker-cli-base:<<base>>-yyyymmddxxx \
