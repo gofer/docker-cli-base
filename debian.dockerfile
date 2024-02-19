@@ -103,7 +103,9 @@ RUN $CARGO install procs \
 
 RUN $CARGO install pueue \
  && cp $CARGO_HOME/bin/pueue /usr/bin/ \
- && tar rvf /artifacts.tar.gz /usr/bin/pueue
+ && cp $CARGO_HOME/bin/pueued /usr/bin/ \
+ && tar rvf /artifacts.tar.gz /usr/bin/pueue \
+ && tar rvf /artifacts.tar.gz /usr/bin/pueued
 
 RUN $CARGO install ripgrep \
  && cp $CARGO_HOME/bin/rg /usr/bin/ \
