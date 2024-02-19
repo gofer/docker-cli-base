@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -xe
+
+git clone https://github.com/gofer/docker-cli-base
+git checkout {{tag_name}}
+pip3 install -t vendor -r requirements.txt
+docker build \
+  -f {{base}}.dockerfile \
+  --tag docker-cli-base:{{base}}-{{tag_name}} \
+  --build-arg cica_ver='{{cica_ver}}' \
+  --build-arg go_ver='{{go_ver}}' \
+  --cpu-period='{{cpu_period}}' \
+  --cpu-quota='{{cpu_quota}}' \
+  .
