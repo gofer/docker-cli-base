@@ -162,5 +162,5 @@ FROM debian:bookworm-slim
 
 COPY --from=tools-builder /artifacts.tar.gz /
 
-RUN apt update && apt upgrade \
+RUN apt update -y && apt upgrade -y \
  && tar xf /artifacts.tar.gz
