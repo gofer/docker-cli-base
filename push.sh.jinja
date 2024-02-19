@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -xe
+
+docker login
+docker tag docker-cli-base:{{base}}-{{tag_name}} {{user}}/docker-cli-base:{{base}}-{{tag_name}}
+docker push {{user}}/docker-cli-base:{{base}}-{{tag_name}}
+docker tag docker-cli-base:{{base}}-{{tag_name}} {{user}}/docker-cli-base:{{base}}
+docker push {{user}}/docker-cli-base:{{base}}
