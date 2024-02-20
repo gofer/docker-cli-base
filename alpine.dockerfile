@@ -1,7 +1,7 @@
 FROM alpine:3.19 AS tools-builder
 
 RUN apk update && apk upgrade \
- && apk add alpine-sdk curl gcc g++ git musl-dev openssl-dev openssl-libs-static unzip
+ && apk add alpine-sdk build-base curl gcc g++ git musl-dev openssl-dev openssl-libs-static unzip
 
 WORKDIR /root/cica
 
