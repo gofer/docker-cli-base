@@ -9,6 +9,7 @@
 ```sh
 $ tmux
 $ git clone https://github.com/gofer/docker-cli-base
+$ cd docker-cli-base
 $ git checkout <<branch_name/tag_name>>
 $ pip3 install --no-user -t vendor -r requirements.txt
 $ python3 make.py <<user>> <<base>> <<branch_name/tag_name>>
