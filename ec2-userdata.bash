@@ -6,7 +6,7 @@ export DOCKER_COMPOSE_VERSION=2.24.6
 
 yum update && yum upgrade
 
-yum install -y git docker tmux
+yum install -y git docker python3-pip tmux
 
 systemctl enable docker && systemctl start docker
 
