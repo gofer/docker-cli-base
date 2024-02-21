@@ -321,6 +321,10 @@ RUN $CARGO install broot \
  && cp $CARGO_HOME/bin/broot /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/broot
 
+RUN $CARGO install eza \
+ && cp $CARGO_HOME/bin/eza /usr/bin/ \
+ && tar rvf /artifacts.tar.gz /usr/bin/eza
+
 RUN $CARGO install fd-find \
  && cp $CARGO_HOME/bin/fd /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/fd
