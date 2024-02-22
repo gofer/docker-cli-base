@@ -81,7 +81,7 @@ RUN $CARGO install git-delta \
  && cp $CARGO_HOME/bin/delta /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/delta
 
-RUN OPENSSL_NO_VENDOR=Y $CARGO install gitui --version=0.24.3 \
+RUN OPENSSL_NO_VENDOR=Y $CARGO install gitui --locked \
  && cp $CARGO_HOME/bin/gitui /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/gitui
 
