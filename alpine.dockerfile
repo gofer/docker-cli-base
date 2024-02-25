@@ -405,4 +405,5 @@ FROM alpine:3.19
 COPY --from=tools-builder /artifacts.tar.gz /
 
 RUN apk update && apk upgrade \
- && tar xf /artifacts.tar.gz
+ && tar xf /artifacts.tar.gz \
+ && rm -f /artifacts.tar.gz
