@@ -2,8 +2,18 @@
 
 set -xe
 
-docker login
-docker tag docker-cli-base:{{base}}-{{tag_name}} {{user}}/docker-cli-base:{{base}}-{{tag_name}}
-docker push {{user}}/docker-cli-base:{{base}}-{{tag_name}}
-docker tag docker-cli-base:{{base}}-{{tag_name}} {{user}}/docker-cli-base:{{base}}
-docker push {{user}}/docker-cli-base:{{base}}
+LOCAL_IMAGE='{{repository}}:{{base}}-{{tag_name}}'
+
+IMAGE_TAG='{{base}}-{{tag_name}}'
+
+SHORTHANDS='{{shorthands}}'
+
+docker login --username '{{user}}'
+
+docker tag "${LOCAL_IMAGE}" "{{user}}/{{repository}}:${IMAGE_TAG}"
+docker push "{{user}}/{{repository}}:${IMAGE_TAG}"
+
+for shorthand in ${SHORTHANDS}; do
+  docker tag "${LOCAL_IMAGE}" "{{user}}/{{repository}}:${shorthand}"
+  docker push "{{user}}/{{repository}}:${shorthand}"
+done
