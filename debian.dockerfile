@@ -162,8 +162,9 @@ RUN $CARGO install zoxide \
  && cp $CARGO_HOME/bin/zoxide /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/zoxide
 
+
 FROM debian:bookworm-slim
 
 COPY --from=tools-builder /artifacts.tar.gz /
 
-RUN tar xf /artifacts.tar.gz
+RUN tar xf /artifacts.tar.gz -C /
