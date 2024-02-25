@@ -18,6 +18,7 @@ RUN git clone https://github.com/aristocratos/btop \
  && cd btop \
  && git checkout main \
  && ADDFLAGS='-fno-ipa-cp' make \
+ && ADDFLAGS='-fno-ipa-cp' make \
  && cp bin/btop /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/btop
 
