@@ -129,22 +129,22 @@ RUN apt install -y libfontconfig1-dev libharfbuzz-dev libxcb1-dev libxcb-render0
  && $CARGO install silicon \
  && cp $CARGO_HOME/bin/silicon /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/silicon \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libharfbuzz.so.0 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libfontconfig.so.1 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libfreetype.so.6 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb.so.1 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb-render.so.0 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb-shape.so.0 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb-xfixes.so.0 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libgraphite2.so.3 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libglib-2.0.so.0 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libexpat.so.1 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libpng16.so.16 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libbrotlidec.so.1 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libXau.so.6 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libXdmcp.so.6 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libbrotlicommon.so.1 \
- && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libbsd.so.0
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libharfbuzz.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libfontconfig.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libfreetype.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb-render.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb-shape.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libxcb-xfixes.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libgraphite2.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libglib-2.0.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libexpat.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libpng16.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libbrotlidec.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libXau.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libXdmcp.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libbrotlicommon.so* \
+ && tar rvf /artifacts.tar.gz /lib/x86_64-linux-gnu/libbsd.so*
 
 RUN $CARGO install skim \
  && cp $CARGO_HOME/bin/sk /usr/bin/ \

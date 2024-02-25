@@ -123,16 +123,16 @@ RUN apk add fontconfig-dev freetype-dev harfbuzz-dev libxcb-dev \
     $CARGO install silicon \
  && cp $CARGO_HOME/bin/silicon /usr/bin/ \
  && tar rvf /artifacts.tar.gz /usr/bin/silicon \
- && tar rvf /artifacts.tar.gz /usr/lib/libexpat.so.1 \
- && tar rvf /artifacts.tar.gz /usr/lib/libbz2.so.1 \
- && tar rvf /artifacts.tar.gz /usr/lib/libpng16.so.16 \
- && tar rvf /artifacts.tar.gz /usr/lib/libgraphite2.so.3 \
- && tar rvf /artifacts.tar.gz /usr/lib/libXau.so.6 \
- && tar rvf /artifacts.tar.gz /usr/lib/libXdmcp.so.6 \
- && tar rvf /artifacts.tar.gz /usr/lib/libbrotlidec.so.1 \
- && tar rvf /artifacts.tar.gz /usr/lib/libbsd.so.0 \
- && tar rvf /artifacts.tar.gz /usr/lib/libbrotlicommon.so.1 \
- && tar rvf /artifacts.tar.gz /usr/lib/libmd.so.0
+ && tar rvf /artifacts.tar.gz /usr/lib/libexpat.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libbz2.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libpng16.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libgraphite2.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libXau.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libXdmcp.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libbrotlidec.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libbsd.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libbrotlicommon.so* \
+ && tar rvf /artifacts.tar.gz /usr/lib/libmd.so*
 
 RUN $CARGO install skim \
  && cp $CARGO_HOME/bin/sk /usr/bin/ \
