@@ -61,7 +61,6 @@ class Factory:
   @classmethod
   def __init__(self):
     self.cli = CLI()
-    print(self.cli.args)
     pass
 
   @classmethod
